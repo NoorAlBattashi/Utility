@@ -6,7 +6,7 @@
  * @author LAP-9
  *
  */
-public class Utility {
+public class MagicSquare {
 
 	/**
 	 * @param args
