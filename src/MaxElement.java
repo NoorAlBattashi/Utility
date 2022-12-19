@@ -1,3 +1,4 @@
+import javax.xml.crypto.dsig.dom.DOMValidateContext;
 
 /**
  * 
@@ -12,6 +13,18 @@ public class MaxElement {
 	/**
 	 * @param args: display the largest element in the array
 	 */
+	private static int getIndex(int[] thirdMaxNum, int x) {
+		int col=0;
+		
+		for (int a=0;a<thirdMaxNum.length;a++) {
+			
+			if(thirdMaxNum[a] == x) {
+			col = a;
+		}
+		}
+		
+		return col;
+	}
 	private static int maxnum(int[] maxNum) {
 		int x = 0;
 		for (int a = 0; a < maxNum.length; a++) {
@@ -25,21 +38,15 @@ public class MaxElement {
 
 	private static int[] secondMaxnum(int[] secMaxNum) {
 		int[] maxN = new int[2];
-		int x = 0;
 		int b = 0;// index of the largest number
 		int s = 0; // right element
 		int l = 0;// left element
 		int secondLargest = 0;
-		for (int a = 0; a < secMaxNum.length; a++) {
 
-			if (secMaxNum[a] > x) {
-				b = a;
-				x = secMaxNum[a];
-			}
-		}
+		b= getIndex(secMaxNum, maxnum(secMaxNum));
+		
 		for (int i = b + 1; i < secMaxNum.length; i++) {
 			if (secMaxNum[i] > s) {
-
 				s = secMaxNum[i];
 			}
 		}
@@ -49,81 +56,54 @@ public class MaxElement {
 				l = secMaxNum[c];
 			}
 		}
-
+        //compare right and left largest elements
 		if (l > s) {
 			secondLargest = l;
 		} else {
 			secondLargest = s;
 		}
-		maxN[0] = x;
+		maxN[0] = maxnum(secMaxNum);
 		maxN[1] = secondLargest;
 
 		return maxN;
 	}
-
-//	private static int thirdMaxNum(int[] thirdMaxNum) {
-//		int x = 0;
-//		int b = 0;// index of the largest number
-//		int s = 0; // right element
-//		int l = 0;// left element
-//		int secondLargest = 0;
-//		int thirdLargest = 0;
-//		int rightlargest=0;//index of the second largest right side
-//		int leftlargest=0;//index of the second largest left side
-//		int secondLargestIndex=0;//index of the second largest number
-//		// largest Number
-//		for (int a = 0; a < thirdMaxNum.length; a++) {
-//
-//			if (thirdMaxNum[a] > x) {
-//				b = a;// index of the largest number
-//				x = thirdMaxNum[a];
-//			}
-//		}
-//		// second largest Number
-//		for (int i = b + 1; i < thirdMaxNum.length; i++) {
-//			if (thirdMaxNum[i] > s) {
-//				rightlargest=i;
-//				s = thirdMaxNum[i];
-//			}
-//		}
-//		for (int c = b - 1; c >= 0; c--) {
-//			if (thirdMaxNum[c] > l) {
-//				leftlargest = c;
-//				l = thirdMaxNum[c];
-//			}
-//		}
-//
-//		if (l > s) {
-//			secondLargest = l;
-//			secondLargestIndex=leftlargest;
-//			
-//		} else {
-//			secondLargest = s;
-//			secondLargestIndex=rightlargest;
-//		}
-//		// third largest
-//		for(int q =secondLargestIndex;) {
-//			
-//		}
-//		return thirdLargest;
-//	}
+	
+	private static int[] thirdMaxNum(int[] thirdMaxNum) {
+		int[] maxN = new int[3];
+		int [] largestnumbers = secondMaxnum(thirdMaxNum);
+		int secondLargest=largestnumbers[1];
+		int thirdLargest =0;
+		for(int a=0; a<thirdMaxNum.length; a++) {
+			
+			if (thirdMaxNum[a] > thirdLargest && thirdMaxNum[a] != maxnum(thirdMaxNum) && thirdMaxNum[a] != secondLargest ) {
+				thirdLargest = thirdMaxNum[a];
+			}
+		}
+		
+		maxN[0] = maxnum(thirdMaxNum);
+		maxN[1] = secondLargest;
+		maxN[2] = thirdLargest;
+		return maxN;
+	}
 
 	public static void main(String[] args) {
-		int[] maxElementArr = { 4, 57, 7, 99, 3, 45, 56 };
+		int[] maxElementArr = { 50,12,8,10,100,1001,6,87,24};
 
 		// Display the largest value
 		System.out.println("Largest Number is: " + maxnum(maxElementArr));
 
 		// Display the second largest value
 		//System.out.println("Second Largest Number is: " + secondMaxnum(maxElementArr));
-		System.out.println("Largest and Second Largest Number are: ");
+		System.out.println("Largest and Second Largest Numbers are: ");
 		for (int i : secondMaxnum(maxElementArr)) {
 			System.out.println(i);
 		}
 
 		// Display the third largest value
-		// System.out.println("Second Largest Number is: " +
-		// thirdMaxNum(maxElementArr));
+		 System.out.println("Largest and Second Largest and Third Largest Numbers are: ");
+			for (int i : thirdMaxNum(maxElementArr)) {
+				System.out.println(i);
+			}
 	}
 
 }
