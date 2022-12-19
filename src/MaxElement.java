@@ -104,6 +104,8 @@ public class MaxElement {
 			for (int i : thirdMaxNum(maxElementArr)) {
 				System.out.println(i);
 			}
-	}
-
+			
+			
+	}//end
+	
 }
