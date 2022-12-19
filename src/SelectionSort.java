@@ -7,25 +7,9 @@
  *
  */
 public class SelectionSort {
-
 	/**
-	 * @param args
+	 * @param args: sort array from the largest number to smallest
 	 */
-
-	private static int getIndex(int[] arr, int x) {
-		// get the index of the elements
-		int col = 0;
-
-		for (int a = 0; a < arr.length; a++) {
-
-			if (arr[a] == x) {
-				col = a;
-			}
-		}
-
-		return col;
-	}
-
 	private static int[] sort(int[] sortArr, int length) {
 
 		for (int a = 0; a < length; a++) {
@@ -37,9 +21,7 @@ public class SelectionSort {
 				if (sortArr[b] > max) {
 					max = sortArr[b];
 					index = b;
-
 				}
-
 			}
 			// swap
 			int firstValue = sortArr[a];
