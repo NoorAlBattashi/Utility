@@ -32,7 +32,7 @@ public class MatchMaking {
 				}
 			}
 		}
-		// display the results from the arrayList
+		//display the results from the arrayList
 		HashMap<String, Integer> display = new HashMap<String, Integer>();
 		for (Integer[] i : sum5) {
 			display.put(Arrays.toString(i), null);
