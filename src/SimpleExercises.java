@@ -1,5 +1,9 @@
+import java.io.InterruptedIOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+
+import javax.xml.crypto.dsig.dom.DOMValidateContext;
 
 /**
  * 
@@ -51,8 +55,60 @@ public class SimpleExercises {
 		}
 
 	}
+
 	private static void reverse(String sentence) {
-		
+		ArrayList<Character> groupStringArrayList = new ArrayList<Character>();
+		for (int lastIndex = sentence.length() - 1; lastIndex >= 0; lastIndex--) {
+
+			char lastElement = sentence.charAt(lastIndex);
+
+			groupStringArrayList.add(lastElement);
+		}
+		for (Character i : groupStringArrayList) {
+			System.out.print(i);
+		}
+
+	}
+
+	private static void factorial(int factorial) {
+		ArrayList<Integer> factorialaArrayList = new ArrayList<Integer>();
+
+		for (Integer numberGenerator = factorial; numberGenerator > 1; numberGenerator--) {
+			factorialaArrayList.add(numberGenerator);
+		}
+
+		Integer totalInteger = 1;
+		for (Integer multiply : factorialaArrayList) {
+			totalInteger = totalInteger * multiply;
+		}
+
+		System.out.println("INPUT: " + factorial);
+		System.out.println("OUTPUT: " + totalInteger);
+	}
+
+	private static void palindrome(String palindrome) {
+		ArrayList<Character> palindromeaArrayList = new ArrayList<Character>();
+
+		for (int addCharacter = 0; addCharacter < palindrome.length(); addCharacter++) {
+			palindromeaArrayList.add(palindrome.charAt(addCharacter));
+		}
+		int check = palindromeaArrayList.size() - 1;
+		boolean match = true;
+		for (Character show : palindromeaArrayList) {
+			if (show.equals(palindromeaArrayList.get(check)) && check >= 0 && match == true) {
+				check--;
+				match = true;
+			} else {
+				match = false;
+			}
+		}
+		if (match == true) {
+			System.out.println("INPUT: " + palindrome);
+			System.out.println("OUTPUT: " + match);
+		} else if (match == false) {
+			System.out.println("INPUT: " + palindrome);
+			System.out.println("OUTPUT: " + match);
+		}
 	}
 
 	public static void main(String[] args) {
@@ -60,24 +116,36 @@ public class SimpleExercises {
 		System.out.println("exercise1");
 		int[] numbers = { 2, 3, 7, 6, 9, 4, 5, 7 };
 		evenOdd(numbers);
-
 		System.out.println();
-		
+
 		// exercise2
 		System.out.println("exercise2");
 		int base = 2;
 		int exponent = 3;
 		power(base, exponent);
-		
 		System.out.println();
-		
-		// exercise3
-				System.out.println("exercise3");
-				String sentenceString = "this is a sentence";
-				
-				System.out.println();
-		
 
+		// exercise3
+		System.out.println("exercise3");
+		String sentence = "this is a sentence";
+		reverse(sentence);
+		System.out.println();
+
+		// exercise4
+		System.out.println();
+		System.out.println("exercise4");
+		int factorial = 5;
+		factorial(factorial);
+		System.out.println();
+
+		// exercise5
+		System.out.println();
+		System.out.println("exercise5");
+		String palindrome = "madam";
+		palindrome(palindrome);
+		System.out.println();
+		String palindrome2 = "something";
+		palindrome(palindrome2);
 	}
 
 }
