@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * 
@@ -87,14 +88,18 @@ public class RecursionPractice {
 		}
 		palindrome(palindromeaArrayList, palindrome, length, start + 1);
 	}
-//	private static void fabonacciMethod(int number) {
-//		ArrayList<Integer> fabonacciArrayList = new ArrayList<Integer>();
-//		for(int index = 0; index < number; index++) {
-//							
-//		}
-//		
-//		
-//	}
+
+	private static void fabonacciMethod(int number) {
+		int[] arr = new int[number];
+		arr[0] = 0;
+		arr[1] = 1;
+		for (int index = 2; index < number; index++) {
+			arr[index] = arr[index - 2] + arr[index - 1];
+		}
+		for (int i : arr) {
+			System.out.print(i + " ");
+		}
+	}
 
 	public static void main(String[] args) {
 
@@ -108,15 +113,14 @@ public class RecursionPractice {
 
 		int number = 4;
 		System.out.println();
-		System.out.println("input: "+ number);
+		System.out.println("input: " + number);
 		System.out.println(incrementDecrement(number - 1, 0));
-		
+
 		int number2 = 5;
 		System.out.println();
 
 		System.out.println("input: " + number2);
 		System.out.println(incrementDecrement(number2 - 1, 0));
-		
 
 		ArrayList<Character> palindromeaArrayList = new ArrayList<Character>();
 		System.out.println();
@@ -126,10 +130,11 @@ public class RecursionPractice {
 		System.out.println();
 		String palindrome2 = "something";
 		palindrome(palindromeaArrayList, palindrome2, palindrome2.length(), 0);
-		
-//		int fabonacci = 7;
-//		System.out.println();
-//		fabonacciMethod(fabonacci);
+
+		int fabonacci = 8;
+		System.out.println();
+		fabonacciMethod(fabonacci);
+
 	}
 
 }
