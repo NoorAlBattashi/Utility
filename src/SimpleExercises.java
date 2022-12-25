@@ -18,6 +18,7 @@ public class SimpleExercises {
 	/**
 	 * @param args
 	 */
+	//method to separate the even numbers from the odd numbers
 	private static void evenOdd(int[] numbers) {
 		ArrayList<Integer> evenNumbers = new ArrayList<Integer>();
 		ArrayList<Integer> oddNumbers = new ArrayList<Integer>();
@@ -25,11 +26,9 @@ public class SimpleExercises {
 		for (int index = 0; index < numbers.length; index++) {
 
 			if (numbers[index] % 2 == 0) {
-				// System.out.println(numbers[index]);
 				evenNumbers.add(numbers[index]);
 			} else {
 				oddNumbers.add(numbers[index]);
-				// System.out.println(numbers[index]);
 			}
 		}
 		numbersSeprated.put("'even': ", evenNumbers);
@@ -38,7 +37,7 @@ public class SimpleExercises {
 		System.out.println(numbersSeprated);
 
 	}
-
+    //method to calculate the power of the numbers
 	private static void power(int base, int exponent) {
 		HashMap<String, Integer> power = new HashMap<String, Integer>();
 		int result = base;
@@ -55,7 +54,7 @@ public class SimpleExercises {
 		}
 
 	}
-
+    //reverse the sentence given by the user
 	private static void reverse(String sentence) {
 		ArrayList<Character> groupStringArrayList = new ArrayList<Character>();
 		for (int lastIndex = sentence.length() - 1; lastIndex >= 0; lastIndex--) {
@@ -69,7 +68,7 @@ public class SimpleExercises {
 		}
 
 	}
-
+    //calculate the factorial of the number given
 	private static void factorial(int factorial) {
 		ArrayList<Integer> factorialaArrayList = new ArrayList<Integer>();
 
@@ -85,7 +84,7 @@ public class SimpleExercises {
 		System.out.println("INPUT: " + factorial);
 		System.out.println("OUTPUT: " + totalInteger);
 	}
-
+    //check if the string given is palindrome
 	private static void palindrome(String palindrome) {
 		ArrayList<Character> palindromeaArrayList = new ArrayList<Character>();
 
