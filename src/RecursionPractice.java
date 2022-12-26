@@ -101,6 +101,22 @@ public class RecursionPractice {
 		}
 	}
 
+	private static void fabonacciMethodRecursion(int number, int[] arr, int start) {
+		arr[0] = 0;
+		arr[1] = 1;
+
+		if (start < number) {
+			arr[start] = arr[start - 2] + arr[start - 1];
+		}
+		if (start > number) {
+			for (int i : arr) {
+				System.out.print(i + " ");
+			}
+			return;
+		}
+		fabonacciMethodRecursion(number, arr, start + 1);
+	}
+
 	public static void main(String[] args) {
 
 		System.out.println("Main return (power method): " + power(2, 3));
@@ -134,6 +150,12 @@ public class RecursionPractice {
 		int fabonacci = 8;
 		System.out.println();
 		fabonacciMethod(fabonacci);
+
+		System.out.println();
+		int fabonacci2 = 8;
+		int[] arr = new int[fabonacci2];
+		System.out.println();
+		fabonacciMethodRecursion(fabonacci2, arr, 2);
 
 	}
 
