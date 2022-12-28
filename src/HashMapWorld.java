@@ -1,3 +1,4 @@
+import java.util.DoubleSummaryStatistics;
 import java.util.HashMap;
 
 /**
@@ -8,8 +9,9 @@ import java.util.HashMap;
  * @author LAP-9
  *
  */
-public class HashMapWorld {
 
+public class HashMapWorld {
+static int a = 2;
 	/**
 	 * @param args
 	 */
@@ -21,6 +23,7 @@ public class HashMapWorld {
 		studentInfo.put("age", "789");
 
 		System.out.println(studentInfo.get("age"));
+
 		// studentInfo.clear();
 //
 //		for (String currentKey : studentInfo.keySet()) {
