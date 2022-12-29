@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -33,10 +34,10 @@ public class ExerciseOneInFiling {
 				storeDataHashMap.put(arrOfStr[0], detailStrings);			
 			}
 			for(String iString :storeDataHashMap.keySet()) {
-				System.out.print(iString);
-				for(int index =0; index < 3;index++) {
-					System.out.print(storeDataHashMap.get(iString)[index] + " ");
-				}
+				System.out.print(iString + " " + Arrays.toString(storeDataHashMap.get(iString)));
+//				for(int index =0; index < 3;index++) {
+//					System.out.print(storeDataHashMap.get(iString)[index] + " ");
+//				}
 				System.out.println();
 			}
 			fileScanner.close();

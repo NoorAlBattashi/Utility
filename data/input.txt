@@ -1,0 +1,7 @@
+I am a sentence
+I am available in this file
+This file is the only place I can survive in
+You are free to process me
+Convert each of my line to uppercase
+Don't modify me please, just put the result in a different file
+call it the output.txt file
